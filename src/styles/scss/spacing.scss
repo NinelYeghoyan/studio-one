@@ -1,0 +1,51 @@
+@use 'breakpoints' as breakpoints;
+
+$spaces: (4, 8, 12, 16, 20, 24, 28, 32, 36, 80);
+
+@each $space in $spaces {
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    @each $side, $infix in (top: t, bottom: b, left: l, right: r) {
+      .#{$abbrev}#{$infix}-#{$space} {
+        #{$prop}-#{$side}: #{$space}px;
+      }
+    }
+  }
+
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    .#{$abbrev}y-#{$space} {
+      #{$prop}-top: #{$space}px;
+      #{$prop}-bottom: #{$space}px;
+    }
+
+    .#{$abbrev}x-#{$space} {
+      #{$prop}-left: #{$space}px;
+      #{$prop}-right: #{$space}px;
+    }
+  }
+}
+
+@each $breakpoint, $value in breakpoints.$breakpoints {
+  @media (min-width: $value) {
+    @each $space in $spaces {
+      @each $prop, $abbrev in (margin: m, padding: p) {
+        @each $side, $infix in (top: t, bottom: b, left: l, right: r) {
+          .#{$breakpoint}\:#{$abbrev}#{$infix}-#{$space} {
+            #{$prop}-#{$side}: #{$space}px;
+          }
+        }
+      }
+
+      @each $prop, $abbrev in (margin: m, padding: p) {
+        .#{$breakpoint}\:#{$abbrev}y-#{$space} {
+          #{$prop}-top: #{$space}px;
+          #{$prop}-bottom: #{$space}px;
+        }
+
+        .#{$breakpoint}\:#{$abbrev}x-#{$space} {
+          #{$prop}-left: #{$space}px;
+          #{$prop}-right: #{$space}px;
+        }
+      }
+    }
+  }
+}

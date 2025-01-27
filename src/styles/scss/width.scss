@@ -1,0 +1,26 @@
+@use 'breakpoints' as breakpoints;
+
+$widths: (
+  screen: 100vw,
+  full: 100%,
+  auto: auto,
+  min: min-content,
+  max: max-content,
+  fit: fit-content,
+);
+
+@each $name, $value in $widths {
+  .w-#{$name} {
+    width: $value;
+  }
+}
+
+@each $breakpoint, $value in breakpoints.$breakpoints {
+  @media (min-width: #{$value}) {
+    @each $name, $value in $widths {
+      .#{$breakpoint}\:w-#{$name} {
+        width: $value;
+      }
+    }
+  }
+}

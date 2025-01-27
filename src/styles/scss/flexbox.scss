@@ -1,0 +1,176 @@
+@use 'breakpoints' as breakpoints;
+
+$align-items: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  stretch: stretch,
+  baseline: baseline,
+);
+
+$justify-content: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+);
+
+$justify-items: (
+  start: start,
+  center: center,
+  end: end,
+  stretch: stretch,
+);
+
+$align-self: (
+  auto: auto,
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  stretch: stretch,
+);
+
+$flex-direction: (
+  row: row,
+  column: column,
+  row-reverse: row-reverse,
+  column-reverse: column-reverse,
+);
+
+$flex-grow: (
+  0: 0,
+  1: 1,
+);
+
+$flex-shrink: (
+  0: 0,
+  1: 1,
+);
+
+$flex-basis: (
+  auto: auto,
+  0: 0,
+  50: 50%,
+  full: 100%,
+);
+
+$flex: (
+  1: 1,
+  auto: auto,
+  initial: initial,
+  none: none,
+);
+
+@each $name, $value in $align-items {
+  .items-#{$name} {
+    align-items: $value;
+  }
+}
+
+@each $name, $value in $justify-content {
+  .justify-#{$name} {
+    justify-content: $value;
+  }
+}
+
+@each $name, $value in $justify-items {
+  .justify-items-#{$name} {
+    justify-items: $value;
+  }
+}
+
+@each $name, $value in $align-self {
+  .self-#{$name} {
+    align-self: $value;
+  }
+}
+
+@each $name, $value in $flex-direction {
+  .flex-#{$name} {
+    flex-direction: $value;
+  }
+}
+
+@each $name, $value in $flex-grow {
+  .grow-#{$name} {
+    flex-grow: $value;
+  }
+}
+
+@each $name, $value in $flex-shrink {
+  .shrink-#{$name} {
+    flex-shrink: $value;
+  }
+}
+
+@each $name, $value in $flex-basis {
+  .basis-#{$name} {
+    flex-basis: $value;
+  }
+}
+
+@each $name, $value in $flex {
+  .flex-#{$name} {
+    flex: $value;
+  }
+}
+
+@each $breakpoint, $value in breakpoints.$breakpoints {
+  @media (min-width: #{$value}) {
+    @each $name, $value in $align-items {
+      .#{$breakpoint}\:items-#{$name} {
+        align-items: $value;
+      }
+    }
+
+    @each $name, $value in $justify-content {
+      .#{$breakpoint}\:justify-#{$name} {
+        justify-content: $value;
+      }
+    }
+
+    @each $name, $value in $justify-items {
+      .#{$breakpoint}\:justify-items-#{$name} {
+        justify-items: $value;
+      }
+    }
+
+    @each $name, $value in $align-self {
+      .#{$breakpoint}\:self-#{$name} {
+        align-self: $value;
+      }
+    }
+
+    @each $name, $value in $flex-direction {
+      .#{$breakpoint}\:flex-#{$name} {
+        flex-direction: $value;
+      }
+    }
+
+    @each $name, $value in $flex-grow {
+      .#{$breakpoint}\:grow-#{$name} {
+        flex-grow: $value;
+      }
+    }
+
+    @each $name, $value in $flex-shrink {
+      .#{$breakpoint}\:shrink-#{$name} {
+        flex-shrink: $value;
+      }
+    }
+
+    @each $name, $value in $flex-basis {
+      .#{$breakpoint}\:basis-#{$name} {
+        flex-basis: $value;
+      }
+    }
+
+    @each $name, $value in $flex {
+      .#{$breakpoint}\:flex-#{$name} {
+        flex: $value;
+      }
+    }
+  }
+}

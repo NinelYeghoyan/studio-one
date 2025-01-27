@@ -1,0 +1,55 @@
+{
+  "home": {
+    "title": "Home",
+    "subtitle": "Welcome to Our Platform",
+    "description": " A modern application showcasing React best practices with Redux,\n TypeScript, and responsive design."
+  },
+  "login": {
+    "title": "Login",
+    "logging": "Logging in...",
+    "logout": "Logout",
+    "username": "Username",
+    "password": "Password"
+  },
+  "features": {
+    "newsFeed": {
+      "title": "News Feed",
+      "description": "Stay updated with our latest news and updates. Features infinite scroll and search functionality."
+    },
+    "userAuthentication": {
+      "title": "User Authentication",
+      "description": "Secure user authentication system with protected routes and profile management."
+    },
+    "modernDesign": {
+      "title": "Modern Design",
+      "description": "Clean and responsive design following modern web standards and best practices."
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "description": "Welcome to your profile page! This is a protected route that can only be accessed when you're logged in.",
+    "accountInformation": {
+      "title": "Account Information",
+      "description": "Username: admin"
+    },
+    "about": {
+      "title": "About",
+      "description": "This is a demo application showcasing various React features including Redux state management, protected routes, and modern UI design."
+    }
+  },
+  "news": {
+    "title": "News",
+    "search": "Search news...",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "modal": {
+    "addTitle": "Add News",
+    "editTitle": "Edit News",
+    "addButton": "Add",
+    "saveButton": "Save",
+    "inputTitle": "Title",
+    "inputDescription": "Description",
+    "inputImageURL": "Image URL"
+  }
+}

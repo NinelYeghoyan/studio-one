@@ -1,0 +1,28 @@
+@use 'breakpoints' as breakpoints;
+
+$display: (
+  block: block,
+  inline-block: inline-block,
+  inline: inline,
+  flex: flex,
+  inline-flex: inline-flex,
+  grid: grid,
+  inline-grid: inline-grid,
+  hidden: none,
+);
+
+@each $name, $value in $display {
+  .#{$name} {
+    display: $value;
+  }
+}
+
+@each $breakpoint, $value in breakpoints.$breakpoints {
+  @media (min-width: #{$value}) {
+    @each $name, $value in $display {
+      .#{$breakpoint}\:#{$name} {
+        display: $value;
+      }
+    }
+  }
+}

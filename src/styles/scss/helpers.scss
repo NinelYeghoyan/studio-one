@@ -1,0 +1,71 @@
+@use 'breakpoints' as breakpoints;
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.whitespace-normal {
+  white-space: normal;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
+@each $breakpoint, $value in breakpoints.$breakpoints {
+  @media (min-width: #{$value}) {
+    .#{$breakpoint}\:flex-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .#{$breakpoint}\:flex-between {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .#{$breakpoint}\:mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .#{$breakpoint}\:cursor-pointer {
+      cursor: pointer;
+    }
+
+    .#{$breakpoint}\:cursor-default {
+      cursor: default;
+    }
+
+    .#{$breakpoint}\:whitespace-normal {
+      white-space: normal;
+    }
+
+    .#{$breakpoint}\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+  }
+}
